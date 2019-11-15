@@ -16,3 +16,7 @@ h1 {
 ::placeholder {
     font-style: italic;
 }
+
+.form-check-label {
+    font-size: 16px;
+}
