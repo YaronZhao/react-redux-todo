@@ -1,4 +1,4 @@
-import {ADD_TODO} from "../actions/actionTypes";
+import {ADD_TODO, REMOVE_TODO} from "../actions/actionTypes";
 
 const todos = (state = [], action) => {
     switch (action.type) {
@@ -10,6 +10,8 @@ const todos = (state = [], action) => {
                     text: action.text
                 }
             ];
+        case REMOVE_TODO:
+            return state.filter(t => t.id !== action.id);
         default:
             return state;
     }
