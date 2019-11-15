@@ -5,7 +5,7 @@ const Header = () =>
         <div className="container">
             <h1 className="display-4">TodoList</h1>
             <p className="lead">
-                This is a example of using React and Redux to implement a simple TodoList
+                This is an example of using React and Redux to implement a simple TodoList
             </p>
         </div>
     </div>;
