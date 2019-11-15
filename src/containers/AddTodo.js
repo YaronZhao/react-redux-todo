@@ -4,6 +4,7 @@ import {addTodo} from "../actions";
 
 const AddTodo = ({dispatch}) => {
     let textInput = React.createRef();
+    let button = React.createRef();
 
     return (
         <div className='input-group w-50'>
@@ -16,7 +17,12 @@ const AddTodo = ({dispatch}) => {
                 <button
                     className="btn btn-outline-secondary"
                     type="button"
-                    onClick={() => dispatch(addTodo(textInput.current.value()))}>
+                    ref={button}
+                    onClick={() => {
+                        dispatch(addTodo(textInput.current.value));
+                        textInput.current.value = '';
+                        button.current.blur();
+                    }}>
                     Add Todo
                 </button>
             </div>

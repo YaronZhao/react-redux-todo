@@ -1,9 +1,9 @@
 import React from 'react'
 
-const TodoListItem = () =>
+const TodoListItem = ({text}) =>
     <div className="form-check pt-3">
         <input className="form-check-input" type="checkbox"/>
-        <label className="form-check-label ml-2">Default checkbox</label>
+        <label className="form-check-label ml-2">{text}</label>
     </div>;
 
 export default TodoListItem
