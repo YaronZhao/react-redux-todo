@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const TodoListItem = ({text, completed, onRemove, onToggle}) =>
     <div className="form-check pt-3">
@@ -20,5 +21,12 @@ const TodoListItem = ({text, completed, onRemove, onToggle}) =>
             Remove
         </button>
     </div>;
+
+TodoListItem.propTypes ={
+  text: PropTypes.string.isRequired,
+  completed: PropTypes.bool.isRequired,
+  onRemove: PropTypes.func.isRequired,
+  onToggle: PropTypes.func.isRequired
+};
 
 export default TodoListItem

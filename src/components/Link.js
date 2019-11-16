@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Link = ({filter, selected, onClick}) =>
     <li className="nav-item">
@@ -8,5 +9,11 @@ const Link = ({filter, selected, onClick}) =>
             {filter}
         </a>
     </li>;
+
+Link.propTypes = {
+  filter: PropTypes.string.isRequired,
+  selected: PropTypes.bool.isRequired,
+  onclick: PropTypes.func.isRequired
+};
 
 export default Link

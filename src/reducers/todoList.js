@@ -19,12 +19,14 @@ const todoList = (state = {todos: [], activeCount: 0}, action) => {
                 todos: state.todos.map(todo =>
                     (todo.id === action.id ?
                         {...todo, completed: !todo.completed} : todo)),
-                activeCount: state.activeCount + (state.todos.find(todo => todo.id === action.id).completed ? 1 : -1)
+                activeCount: state.activeCount +
+                    (state.todos.find(todo => todo.id === action.id).completed ? 1 : -1)
             };
         case REMOVE_TODO:
             return {
                 todos: state.todos.filter(t => t.id !== action.id),
-                activeCount: state.activeCount - 1
+                activeCount: state.activeCount -
+                    (state.todos.find(todo => todo.id === action.id).completed ? 0 : 1)
             };
         default:
             return state;

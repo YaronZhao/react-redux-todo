@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from './Link'
 import {VisibilityFilters} from "../actions";
+import PropTypes from 'prop-types'
 
 const Footer = ({activeCount, currentFilter, setVisibilityFilter}) =>
     <nav className="navbar navbar-light bg-light w-50 mt-4">
@@ -22,5 +23,11 @@ const Footer = ({activeCount, currentFilter, setVisibilityFilter}) =>
               onClick={() => setVisibilityFilter(VisibilityFilters.SHOW_COMPLETED)}/>
       </ul>
     </nav>;
+
+Footer.propTypes = {
+    activeCount: PropTypes.number.isRequired,
+    currentFilter: PropTypes.string.isRequired,
+    setVisibilityFilter: PropTypes.func.isRequired
+};
 
 export default Footer;

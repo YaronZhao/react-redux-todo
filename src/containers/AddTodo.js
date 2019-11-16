@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addTodo} from "../actions";
+import PropTypes from 'prop-types'
 
 const AddTodo = ({dispatch}) => {
     let textInput = React.createRef();
@@ -33,6 +34,10 @@ const AddTodo = ({dispatch}) => {
             </div>
         </div>
     )
+};
+
+AddTodo.propTypes = {
+  dispatch: PropTypes.func.isRequired
 };
 
 export default connect()(AddTodo)
