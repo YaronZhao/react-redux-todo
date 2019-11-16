@@ -28,3 +28,9 @@ h1 {
 .nav-link:hover {
     background-color: lightslategrey;
 }
+
+@media (max-width: 576px) {
+    .input-group, .navbar {
+        width: 100% !important;
+    }
+}

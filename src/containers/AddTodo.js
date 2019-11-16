@@ -7,7 +7,7 @@ const AddTodo = ({dispatch}) => {
     let button = React.createRef();
 
     return (
-        <div className='input-group w-50'>
+        <div id="addTodo" className='input-group w-50'>
             <input
                 type="text"
                 className="form-control"

@@ -1,4 +1,4 @@
-import {ADD_TODO, REMOVE_TODO, SET_VISIBILITY_FILTER} from "./actionTypes";
+import {ADD_TODO, TOGGLE_TODO, REMOVE_TODO, SET_VISIBILITY_FILTER} from "./actionTypes";
 
 let newTodoId = 0;
 
@@ -7,6 +7,11 @@ export const addTodo = text => ({
     id: ++newTodoId,
     text,
     completed: false
+});
+
+export const toggleTodo = id => ({
+    type: TOGGLE_TODO,
+    id
 });
 
 export const removeTodo = id => ({

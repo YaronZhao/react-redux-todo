@@ -1,4 +1,4 @@
-import {ADD_TODO, REMOVE_TODO} from "../actions/actionTypes";
+import {ADD_TODO, TOGGLE_TODO, REMOVE_TODO} from "../actions/actionTypes";
 
 const todoList = (state = {todos: [], activeCount: 0}, action) => {
     switch (action.type) {
@@ -13,6 +13,13 @@ const todoList = (state = {todos: [], activeCount: 0}, action) => {
                     }
                 ],
                 activeCount: state.activeCount + 1
+            };
+        case TOGGLE_TODO:
+            return {
+                todos: state.todos.map(todo =>
+                    (todo.id === action.id ?
+                        {...todo, completed: !todo.completed} : todo)),
+                activeCount: state.activeCount + (state.todos.find(todo => todo.id === action.id).completed ? 1 : -1)
             };
         case REMOVE_TODO:
             return {
