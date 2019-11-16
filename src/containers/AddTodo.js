@@ -15,12 +15,17 @@ const AddTodo = ({dispatch}) => {
                 ref={textInput}/>
             <div className="input-group-append">
                 <button
-                    className="btn btn-outline-secondary"
+                    className="btn btn-outline-info"
                     type="button"
                     ref={button}
                     onClick={() => {
-                        dispatch(addTodo(textInput.current.value));
-                        textInput.current.value = '';
+                        let inputValue = textInput.current.value;
+                        if (inputValue === '') {
+                            alert('The content of a todo item should not be empty:)')
+                        } else {
+                            dispatch(addTodo(inputValue));
+                            textInput.current.value = '';
+                        }
                         button.current.blur();
                     }}>
                     Add Todo

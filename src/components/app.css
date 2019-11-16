@@ -20,3 +20,11 @@ h1 {
 .form-check-label {
     font-size: 16px;
 }
+
+#activeCount {
+    color: deepskyblue;
+}
+
+.nav-link:hover {
+    background-color: lightslategrey;
+}
