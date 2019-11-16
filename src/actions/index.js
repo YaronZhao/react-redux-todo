@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO } from "./actionTypes";
+import {ADD_TODO, REMOVE_TODO, SET_VISIBILITY_FILTER} from "./actionTypes";
 
 let newTodoId = 0;
 
@@ -18,3 +18,8 @@ export const VisibilityFilters = {
     SHOW_COMPLETED: 'SHOW_COMPLETED',
     SHOW_ACTIVE: 'SHOW_ACTIVE'
 };
+
+export const setVisibilityFilter = filter => ({
+   type: SET_VISIBILITY_FILTER,
+   filter
+});
